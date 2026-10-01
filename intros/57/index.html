@@ -3,8 +3,6 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Unity WebGL Player | Long Leash</title>
-    <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
   </head>
   <body>
@@ -25,6 +23,7 @@
         <div id="unity-build-title">Long Leash</div>
       </div>
     </div>
+    
     <script>
       var buildUrl = "Build";
       var loaderUrl = buildUrl + "/Web.loader.js";
@@ -45,17 +44,9 @@
       var fullscreenButton = document.querySelector("#unity-fullscreen-button");
       var mobileWarning = document.querySelector("#unity-mobile-warning");
 
-      // By default Unity keeps WebGL canvas render target size matched with
-      // the DOM size of the canvas element (scaled by window.devicePixelRatio)
-      // Set this to false if you want to decouple this synchronization from
-      // happening inside the engine, and you would instead like to size up
-      // the canvas DOM size and WebGL render target sizes yourself.
-      // config.matchWebGLToCanvasSize = false;
-
       if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
         container.className = "unity-mobile";
-        // Avoid draining fillrate performance on mobile devices,
-        // and default/override low DPI mode on mobile browsers.
+        
         config.devicePixelRatio = 1;
         mobileWarning.style.display = "block";
         setTimeout(() => {
@@ -85,4 +76,3 @@
     </script>
   </body>
 </html>
-<script defer src="https://static.itch.io/htmlgame.js" type="text/javascript"></script>
